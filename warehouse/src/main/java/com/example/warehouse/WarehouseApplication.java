@@ -21,11 +21,11 @@ public class WarehouseApplication implements CommandLineRunner {
   private String key;
 
   @Override
-  public void run(String... args) throws Exception {
+  public void run(String... args) {
     var refunds =
         List.of(
-            new Refund("5555555555554444", BigDecimal.valueOf(500)),
-            new Refund("4012888888881881", BigDecimal.valueOf(250)));
+            new Refund("12345", BigDecimal.valueOf(500)),
+            new Refund("56789", BigDecimal.valueOf(250)));
 
     refundGenerationService.generateReport(Path.of(refundsPath), refunds, key.getBytes());
   }
